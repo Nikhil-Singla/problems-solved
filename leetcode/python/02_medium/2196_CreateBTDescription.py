@@ -8,22 +8,22 @@
 class Solution:
     def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:
         nodes = {}
-        children = set()
+        root = 0
 
         for x, y, left in descriptions:
             if x not in nodes:
                 nodes[x] = TreeNode(x)
+                root ^= x
+
             if y not in nodes:
                 nodes[y] = TreeNode(y)
+                root ^= y
+
             if left:
                 nodes[x].left = nodes[y]
             else:
                 nodes[x].right = nodes[y]
             
-            children.add(y)
+            root ^= y
 
-        for x, y, z in descriptions:
-            if x not in children:
-                return nodes[x]
-
-        return None
+        return nodes[root]
