@@ -1,0 +1,16 @@
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        less = []
+        more = []
+        count = 0
+        for i in nums:
+            if i == pivot:
+                count += 1
+            elif i < pivot:
+                less.append(i)
+            elif i > pivot:
+                more.append(i)
+
+        less.extend([pivot]*count)
+        less.extend(more)
+        return less
