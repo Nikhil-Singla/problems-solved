@@ -3,4 +3,4 @@ class Solution:
         small = min(nums)
         large = max(nums)
 
-        return k * (large - small)
+        return (large - small) * k
