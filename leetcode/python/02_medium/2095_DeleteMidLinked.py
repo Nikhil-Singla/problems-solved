@@ -14,7 +14,7 @@ class Solution:
         prev = head
 
         # Order matters because fast can be none and then None.next will throw an error
-        while fast != None and fast.next != None:
+        while fast and fast.next:
             prev = slow
             slow = slow.next
             fast = fast.next.next
