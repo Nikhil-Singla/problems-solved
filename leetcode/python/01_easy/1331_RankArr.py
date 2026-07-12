@@ -3,7 +3,4 @@ class Solution:
         ranks = sorted(set(arr))
         converted = {k:i for i, k in enumerate(ranks)}
 
-        for i, k in enumerate(arr):
-            arr[i] = converted[k] + 1
-
-        return arr
+        return [converted[k]+1 for k in arr]
