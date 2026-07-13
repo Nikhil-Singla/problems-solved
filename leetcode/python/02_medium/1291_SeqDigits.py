@@ -1,19 +1,18 @@
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
-        start = list(range(1,10))
-        curr_num = 2
-        ans = set()
-        while(curr_num < 10):
-            for i in range(9):
-                if i + curr_num > 9:
+        length = len(str(low))
+        max_len = len(str(high))
+        ans = []
+        for i in range(length, max_len+1):
+            for j in range(1, 11-i):
+                num = 0
+                for k in range(i):
+                    num *= 10
+                    num += j + k
+
+                if num > high:
                     break
-                start[i] *= 10
-                start[i] += i + curr_num
-
-            for i in start:
-                if low <= i <= high:
-                    ans.add(i)
-            
-            curr_num += 1
-
-        return sorted(list(ans))
+                if num >= low:
+                    ans.append(num)
+        
+        return ans
