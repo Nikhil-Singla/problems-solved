@@ -21,14 +21,14 @@
       "03_hard": 15
     },
     "hacker_rank/problem_solving": 18,
-    "hacker_rank/python": 19
+    "hacker_rank/python": 20
   },
-  "total": 548,
+  "total": 549,
   "by_language": {
     "mysql": 15,
     "cpp": 247,
     "js_ts": 3,
-    "python": 283
+    "python": 284
   },
   "leetcode_only": {
     "01_easy": 323,
@@ -37,6 +37,6 @@
   },
   "hacker_rank_only": {
     "problem_solving": 18,
-    "python": 19
+    "python": 20
   }
 }
