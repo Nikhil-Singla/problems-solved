@@ -9,7 +9,7 @@ import sys
 # Complete the solve function below.
 def solve(s):
     s = s.split(" ")
-    s = [i.title() for i in s]
+    s = [i.title() if i and not i[0].isnumeric() else i for i in s]
     return " ".join(s)
 
 
