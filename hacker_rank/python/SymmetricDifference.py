@@ -10,14 +10,10 @@ c = a.intersection(b)
 
 ans = []
 
-for i in a:
-    if i not in c:
-        ans.append(i)
-        
-for i in b:
-    if i not in c:
-        ans.append(i)
-        
+ans = list(a.difference(c))
+ans.extend(list(b.difference(c)))
+
 ans.sort()
+
 for i in ans:
     print(i)
