@@ -3,18 +3,19 @@ class Solution:
         if n == 1:
             return ['()']
 
-        ans = set()
+        ans = []
 
-        def helper(stack, opened, depth):
-            if depth == n:
-                ans.add("".join(stack + ([')'] * opened)))
+        def helper(stack, opened_brackets, total_brackets):
+            if len(stack) == 2*n:
+                ans.append("".join(stack))                
                 return
 
-            helper(stack + ['('], opened+1, depth+1)
+            if total_brackets < n:
+                helper(stack + ['('], opened_brackets+1, total_brackets+1)
 
-            for i in range(1, opened+1):
-                helper(stack + ([')']*i), opened-i, depth)
+            if opened_brackets > 0:
+                helper(stack + [')'], opened_brackets-1, total_brackets)
 
         helper([], 0, 0)
 
-        return list(ans)
+        return ans
